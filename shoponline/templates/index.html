@@ -1,0 +1,94 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    <title>Онлайн магазин</title>
+{% endblock %}
+
+{% block body %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Онлайн магазин</h1>
+      <p class="fs-5 text-body-secondary">Мы рады приветствовать вас в нашем магазине. Надеемся нам товар вам понравиться и вы будете возвращаться к нам снова и снова.
+                Приятных покупок!!!</p>
+</div>
+  </header>
+
+  <main>
+    <div class="card-deck md-3 text-center "
+    {% for el in data %}
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-body-secondary fw-light">RUB</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Описание</li>
+                  <li>Характеристика</li>
+                  <li>Срок использования</li>
+                </ul>
+                <a href="/buy/{{ el.id }}" class="w-100 btn btn-lg btn-outline-primary">Купить товар</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+      <h2 class="display-6 text-center mb-4">Сравнить планы</h2>
+        <div class="table-responsive">
+          <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 34%;"></th>
+              <th style="width: 22%;">Бесплатно</th>
+              <th style="width: 22%;">Про</th>
+              <th style="width: 22%;">Предприятие</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Общественный</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Частный</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Разрешения</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Обмен</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Неограниченное количество участников</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Дополнительная безопасность</th>
+            <td></td>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+{% endblock %}
